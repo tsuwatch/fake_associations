@@ -1,8 +1,6 @@
 # FakeAssociation
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fake_association`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+To enable to use ActiveRecord association in the module is not ActiveRecord.
 
 ## Installation
 
@@ -22,7 +20,52 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+It has been confirmed that the following code to work
+
+```ruby
+class User
+
+  # Need
+  attr_accessor :id
+	
+  has_many :tweets
+	
+  has_many :friendships, foreign_key: 'follower_id'
+  has_many :followed_user, through: :friendships, source: :followed
+	
+  has_many :reverse_friendships, foreign_key: 'followed_id', class_name: 'Friendship'
+  has_many :followers, through: :reverse_friendships, source: :follower
+	
+  has_many :favorite_tweets, through: :favorites, source: :tweet
+end
+
+class Friendship < ActiveRecord::Base
+#  Table name: friendships
+#
+#  id          :integer  not null, primary key
+#  follower_id :integer
+#  followed_id :integer
+end
+
+class Tweet < ActiveRecord::Base
+#  Table name: tweets
+#
+#  id          :integer  not null, primary key
+#  user_id     :integer
+end
+
+class Favorite < ActiveRecord::Base
+#  Table name: favorites
+#
+#  id          :integer  not null, primary key
+#  user_id     :integer
+#  tweet_id    :integer
+end
+```
+
+## Limitation
+
+Support associations is only `has_many` and limited options.
 
 ## Development
 
