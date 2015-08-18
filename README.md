@@ -24,6 +24,7 @@ It has been confirmed that the following code to work
 
 ```ruby
 class User
+  include FakeAssociation
 
   # Need
   attr_accessor :id
