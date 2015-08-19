@@ -1,6 +1,6 @@
-require "fake_association/version"
+require "fake_associations/version"
 
-module FakeAssociation
+module FakeAssociations
   extend ActiveSupport::Concern
   DEFINED_METHODS = {}
 

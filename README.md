@@ -1,4 +1,4 @@
-# FakeAssociation
+# FakeAssociations
 
 To enable to use ActiveRecord association in the module is not ActiveRecord.
 
@@ -7,7 +7,7 @@ To enable to use ActiveRecord association in the module is not ActiveRecord.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'fake_association'
+gem 'fake_associations'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install fake_association
+    $ gem install fake_associations
 
 ## Usage
 
@@ -24,7 +24,7 @@ It has been confirmed that the following code to work
 
 ```ruby
 class User
-  include FakeAssociation
+  include FakeAssociations
 
   # Need
   attr_accessor :id
@@ -78,5 +78,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/fake_association.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/fake_associations.
 
