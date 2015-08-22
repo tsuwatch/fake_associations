@@ -1,4 +1,8 @@
 # FakeAssociations
+[![Gem Version](https://badge.fury.io/rb/fake_associations.svg)](http://badge.fury.io/rb/fake_associations)
+[![Build Status](https://travis-ci.org/tsuwatch/fake_associations.svg?branch=master)](https://travis-ci.org/tsuwatch/fake_associations)
+[![Coverage Status](https://coveralls.io/repos/tsuwatch/fake_associations/badge.svg?branch=master&service=github)](https://coveralls.io/github/tsuwatch/fake_associations?branch=master)
+[![Code Climate](https://codeclimate.com/github/tsuwatch/fake_associations/badges/gpa.svg)](https://codeclimate.com/github/tsuwatch/fake_associations)
 
 To enable to use ActiveRecord association in the module is not ActiveRecord.
 
