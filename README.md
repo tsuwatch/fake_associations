@@ -41,26 +41,26 @@ class User
 end
 
 class Friendship < ActiveRecord::Base
-#  Table name: friendships
-#
-#  id          :integer  not null, primary key
-#  follower_id :integer
-#  followed_id :integer
+  #  Table name: friendships
+  #
+  #  id          :integer  not null, primary key
+  #  follower_id :integer
+  #  followed_id :integer
 end
 
 class Tweet < ActiveRecord::Base
-#  Table name: tweets
-#
-#  id          :integer  not null, primary key
-#  user_id     :integer
+  #  Table name: tweets
+  #
+  #  id          :integer  not null, primary key
+  #  user_id     :integer
 end
 
 class Favorite < ActiveRecord::Base
-#  Table name: favorites
-#
-#  id          :integer  not null, primary key
-#  user_id     :integer
-#  tweet_id    :integer
+  #  Table name: favorites
+  #
+  #  id          :integer  not null, primary key
+  #  user_id     :integer
+  #  tweet_id    :integer
 end
 ```
 
