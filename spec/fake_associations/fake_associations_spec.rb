@@ -8,6 +8,9 @@ describe FakeAssociations do
     attr_accessor :id
 
     has_many :posts
+    has_many :favorites
+
+    has_many :favorites_posts, through: :favorites, source: :post
   end
 
   describe 'has_many' do
@@ -23,11 +26,26 @@ describe FakeAssociations do
       end
 
       describe 'association' do
-        let(:user) { User.new(id: 1) }
         let!(:post) { Post.create(user_id: user.id) }
 
-        it 'returns ActiveRecord object' do
-          expect(user.posts.first).to eq post
+        it 'returns post object' do
+          expect(user.posts).to eq [post]
+        end
+
+        context 'using through and source options' do
+          it 'defines association' do
+            expect(user).to be_respond_to(:favorites_posts)
+          end
+
+          describe 'association' do
+            let!(:favorites) do
+              Favorite.create(user_id: user.id, post_id: post.id)
+            end
+
+            it 'returns favorite posts object' do
+              expect(user.favorites_posts).to eq [post]
+            end
+          end
         end
       end
     end

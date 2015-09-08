@@ -34,6 +34,7 @@ class User
   attr_accessor :id
 	
   has_many :tweets
+  has_many :favorites
 	
   has_many :friendships, foreign_key: 'follower_id'
   has_many :followed_user, through: :friendships, source: :followed
@@ -65,6 +66,9 @@ class Favorite < ActiveRecord::Base
   #  id          :integer  not null, primary key
   #  user_id     :integer
   #  tweet_id    :integer
+
+  belongs_to :post
+  belongs_to :user
 end
 ```
 

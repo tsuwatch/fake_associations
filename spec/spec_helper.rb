@@ -10,12 +10,12 @@ ActiveRecord::Base.establish_connection(
 )
 
 class Post < ActiveRecord::Base; end
+class Favorite < ActiveRecord::Base
+  belongs_to :post
+end
 
 ActiveRecord::Migration.verbose = false
-ActiveRecord::Migration.create_table :posts do |t|
-  t.string :content
-  t.integer :user_id
-end
+ActiveRecord::Migrator.migrate File.expand_path('../db/migrate', __FILE__), nil
 
 require 'database_cleaner'
 
