@@ -51,9 +51,12 @@ class Friendship < ActiveRecord::Base
   #  id          :integer  not null, primary key
   #  follower_id :integer
   #  followed_id :integer
+
+  belongs_to :follower, class_name: 'User'
+  belongs_to :followed, class_name: 'User'
 end
 
-class Tweet < ActiveRecord::Base
+class Post < ActiveRecord::Base
   #  Table name: tweets
   #
   #  id          :integer  not null, primary key
