@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/tsuwatch/fake_associations/badge.svg?branch=master&service=github)](https://coveralls.io/github/tsuwatch/fake_associations?branch=master)
 [![Code Climate](https://codeclimate.com/github/tsuwatch/fake_associations/badges/gpa.svg)](https://codeclimate.com/github/tsuwatch/fake_associations)
 
-To enable to use ActiveRecord association in the module is not ActiveRecord.
+Enables association DSL in classes that don't inherit from ActiveRecord.
 
 ## Installation
 
@@ -23,8 +23,6 @@ Or install it yourself as:
     $ gem install fake_associations
 
 ## Usage
-
-It has been confirmed that the following code to work
 
 ```ruby
 class User
@@ -56,7 +54,7 @@ class Friendship < ActiveRecord::Base
   belongs_to :followed, class_name: 'User'
 end
 
-class Post < ActiveRecord::Base
+class Tweet < ActiveRecord::Base
   #  Table name: tweets
   #
   #  id          :integer  not null, primary key
